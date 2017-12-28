@@ -42,6 +42,19 @@ var MyApp;
         }());
         Services.YelpSearchService = YelpSearchService;
         angular.module('MyApp').service('yelpSearchService', YelpSearchService);
+        //export class YellowPagesSearchService {
+        //    private YellowPageResource;
+        //    public get(id: string) {
+        //        return this.YellowPageResource.get({ id: id });
+        //    }
+        //    public yellowPageSearch(searchString) {
+        //        return this.YellowPageResource.get({ searchString: searchString }); 
+        //    }
+        //    constructor($resource: angular.resource.IResourceService) {
+        //        this.YellowPageResource = $resource('/api/yellowpages/');
+        //    }
+        //}
+        //angular.module('MyApp').service('yellowPagesSearchService', YellowPagesSearchService);
     })(Services = MyApp.Services || (MyApp.Services = {}));
 })(MyApp || (MyApp = {}));
 //# sourceMappingURL=services.js.map
