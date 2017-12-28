@@ -1,0 +1,86 @@
+﻿<div class="container">
+    <div class="well">
+        <div class="media">
+            <div class="media-body">
+                <h1>Search for Reviews!</h1>
+                <hr />
+                <br />
+                <div ng-repeat="yelp in controller.yelpResults.yelpReviews">
+                    <div class="row">
+                        <a class="pull-left col-md-2" href="#">
+                            <img class="media-object" src="{{yelp.image_url}}" />
+                        </a>
+                        <div class="col-md-10">
+                            <h4 class="media-heading">{{yelp.name}}</h4>
+                            <p>
+                                {{yelp.snippet_text}}
+                            </p>
+                            <ul class="list-inline list-unstyled">
+                                <span><i class="glyphicon glyphicon-comment">{{yelp.review_count}}</i></span>
+                                <li>|</li>
+                                <a href="{{yelp.url}}">Review Link</a>
+                                <li>|</li>
+                                <li>
+                                    <span class="glyphicon glyphicon-star">{{yelp.rating}}</span>
+                                </li>
+                                <li>|</li>
+                                <li>
+                                    <span><i class="fa fa-facebook-square"></i></span>
+                                    <span><i class="fa fa-twitter-square"></i></span>
+                                    <span><i class="fa fa-google-plus-square"></i></span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <span>{{yelp.rating}}</span>
+                                    <span>{{yelp.rating_img_url}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <form ng-submit="controller.search()">
+                    <div>
+                        <label class="col-md-2">Name:</label>
+                        <input class="control-label" type="text" ng-model="controller.yelpSearch.search" />
+                    </div>
+                    <div>
+                        <label class="col-md-2">Location:</label>
+                        <input type="text" ng-model="controller.yelpSearch.location" />
+                    </div>
+                    <br />
+                    <button>Search</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h3>Search Reviews</h3>
+    <ui-gmap-google-map center="controller.center" zoom="controller.zoom">
+        <ui-gmap-markers models="controller.markers" coords="'self'" icon="'icon'" options="'options'"></ui-gmap-markers>
+    </ui-gmap-google-map>
+</div>
+
+
+
+

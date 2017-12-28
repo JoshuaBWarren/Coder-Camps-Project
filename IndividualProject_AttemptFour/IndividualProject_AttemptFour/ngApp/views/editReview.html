@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <form ng-submit="controller.save()">
+        <div>
+            <label>Name:</label>
+            <input ng-model="controller.reviewToEdit.name" />
+        </div>
+        <div>
+            <label>Title</label>
+            <input ng-model="controller.reviewToEdit.title" />
+        </div>
+        <div>
+            <label>Review:</label>
+            <input ng-model="controller.reviewToEdit.reviews" />
+        </div>
+        <div>
+            <label>Stars:</label>
+            <input ng-model="controller.reviewToEdit.stars" />
+        </div>
+
+        <input type="submit" value="Save" />
+    </form>
+</div>
+

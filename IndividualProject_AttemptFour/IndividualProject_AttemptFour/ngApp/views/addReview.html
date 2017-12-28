@@ -1,0 +1,122 @@
+﻿<div class="container">
+    
+    <div class="span8" ng-repeat="review in controller.reviews.reviews">
+        <!-- first reviews is the received big object from the server, second reviews is the list-->
+        <div class="row">
+            <div class="span8">
+                <h4><strong>{{review.review.title}}</strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span2">
+                <div class="stars">
+                    <form ng-model="review.review.stars">
+                        <input class="star star-5" id="star-5" type="radio" name="star" value= 5 ng-model="review.review.stars" />
+                        <label class="star star-5"></label>
+                        <input class="star star-4" id="star-4" type="radio" name="star" value= 4 ng-model="review.review.stars"/>
+                        <label class="star star-4"></label>
+                        <input class="star star-3" id="star-3" type="radio" name="star" value= 3 ng-model="review.review.stars"/>
+                        <label class="star star-3"></label>                       
+                        <input class="star star-2" id="star-2" type="radio" name="star" value= 2 ng-model="review.review.stars"/>
+                        <label class="star star-2"></label>
+                        <input class="star star-1" id="star-1" type="radio" name="star" value= 1 ng-model="review.review.stars"/>
+                        <label class="star star-1"></label>
+                       
+                    </form>
+                </div>
+            </div>
+            <div class="span6">
+                <p>
+                    {{review.review.reviews}}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span8">
+                <p></p>
+                <p>
+                    <i class="icon-user">by <a href="#">{{review.review.name}}</a></i>
+                    <br />
+                    <br />
+                    <!--| <i class="icon-calendar"></i> Sept 16th, 2012-->
+                    <span ng-show="review.canModify">
+                        <a href="/editReview/{{review.review.id}}">Edit</a>
+                    </span>
+                    <span ng-show="review.canModify">
+                        <a ng-click="controller.delete(review.review.id)">Delete</a>
+                    </span>
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <form ng-submit="controller.save()">
+        <div>
+            <label>Name:</label>
+            <input type="text" ng-model="controller.newReview.name" />
+        </div>
+        <div>
+            <label>Title:</label>
+            <input type="text" ng-model="controller.newReview.title" />
+        </div>
+        <div>
+            <label>Review:</label>
+            <input type="text" ng-model="controller.newReview.reviews" />
+        </div>
+        <div>
+            <label>Stars:</label>
+            <input type="number" ng-model="controller.newReview.stars" />
+        </div>
+        <input type="submit" value="Submit" />
+
+
+    </form>
+</div>
+<hr>
+
+
+<!--<div>
+  <div class="col-sm-12">
+    <div class="row">
+      <div ng-controller="MyCtrl">
+        <h3 class="pdt-title">Review</h3>
+        <hr>
+        <div class="alert alert-danger" ng-if="reviews.length == 0">
+          {{name}} No reviews yet, be the first to review this Product!
+        </div>
+        <br>
+        <div class="col-sm-12" ng-repeat="review in reviews">
+          <blockquote class="row">
+            <h3 class="pdt-title col-sm-6">{{review.username}}</h3>
+            <h3 class="pdt-title col-sm-6">{{review.star}}</h3>
+            <h5 class="col-sm-12"><small><i>{{review.email}}</i></small></h5>
+            <p class="col-sm-12">{{review.message}}</p>
+          </blockquote>
+        </div>
+        <form class="form-inline form-group">
+          <div class="input-group">
+            <span class="input-group-addon">Name</span>
+            <input class="form-control" type="text" ng-model="review.username" />
+
+            <span class="input-group-addon">E-mail</span>
+            <input class="form-control" type="email" ng-model="review.email" />
+
+            <span class="input-group-addon">Star</span>
+            <select class="form-control" ng-model="review.star">
+              <option name="oneStar" value="1 star">1 Star</option>
+              <option name="twoStar" value="2 star">2 Star</option>
+              <option name="threeStar" value="3 star">3 Star</option>
+              <option name="fourStar" value="4 star">4 Star</option>
+              <option name="fiveStar" value="5 star">5 Star</option>
+            </select>
+          </div>
+        </form>
+        <textarea class="form-control" rows="5" ng-model="review.message"></textarea>
+        <br>
+        <input type="submit" class="btn btn-block btn-success" ng-click="addReview()" value="Submit review" />
+
+
+      </div>
+    </div>
+  </div>
+</div>-->

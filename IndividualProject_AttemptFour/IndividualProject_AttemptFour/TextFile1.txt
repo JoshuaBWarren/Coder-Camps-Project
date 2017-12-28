@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace IndividualProject_AttemptFour.Models
+{
+    public class EFRepository : IRepository
+    {
+
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
+        public IList<Review> ListReviews()
+        {
+            return _db.Reviews.ToList();
+        }
+
+        public void SaveReview(Review reviewToSave, string userId)
+        {
+            //if (reviewToSave.Id == 0)  //goes off when nothing is in the input fields
+            //{
+            //    reviewToSave.ApplicationUserId = userId;
+            //    _db.Reviews.Add(reviewToSave);
+            //    _db.SaveChanges();
+            //}
+            //else
+            //{
+            //    var original = this.Find(reviewToSave.Id);
+            //    original.Name = reviewToSave.Name;
+            //    original.Reviews = reviewToSave.Reviews;
+            //    _db.SaveChanges();
+            //}
+        }
+
+        public Review Find(int id)
+        {
+            return _db.Reviews.Find(id);
+        }
+
+        public void Delete(int id)
+        {
+            var review = this.Find(id);
+            _db.Reviews.Remove(review);
+            _db.SaveChanges();
+        }
+
+        public ApplicationUser GetUser(string userId)
+        {
+            return _db.Users.Find(userId);
+        }
+    }
+}
+
+IRepository
+
+using System.Collections.Generic;
+
+namespace IndividualProject_AttemptFour.Models
+{
+    public interface IRepository
+    {
+        void Delete(int id);
+        Review Find(int id);
+        ApplicationUser GetUser(string userId);
+        IList<Review> ListReviews();
+        void SaveReview(Review reviewToSave, string userId);
+    }
+}

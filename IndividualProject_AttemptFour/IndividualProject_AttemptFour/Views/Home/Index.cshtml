@@ -1,0 +1,65 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<head>
+    <title>IndividualProject_AttemptFour</title>
+    <base href="/" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <!-- code from bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/journal/bootstrap.min.css" rel="stylesheet" integrity="sha256-bPSyJP9+ovy9/YbIwvZyX6r2M4PkiF01vt0zuDLUEzs= sha512-F4ep7hh9V7i7UvRF56Vq8VgjFIFGRVaE2y5UZ2FtIcMWoLFiDxTmHgnDm1XDZGcc6Vtp+kwtL0Kd3VA8uBMK9g==" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <style>
+        .modal-dialog {
+        left: 0px;
+        }
+    </style>
+
+
+</head>
+<body ng-controller="AccountController as account">
+    <!--Side Bar Code HTML-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1> Rivyu </h1>
+                <h4> The Source of All Reviews </h4>
+                <nav class="nav-sidebar">
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/addReview">Leave a Review!</a></li>
+                        <li><a href="/searchReview">Search Reviews!</a></li>
+                        <li><a href="/login" ng-show="!account.isLoggedIn()">Login</a></li>
+                        <li><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+
+
+
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+
+    <script src="~/ngApp/app.js"></script>
+    <script src="~/ngApp/controllers/controllers.js"></script>
+    <script src="~/ngApp/services/services.js"></script>
+    
+    <script src="~/Scripts/lodash.js"></script>
+    <script src="~/Scripts/angular-simple-logger.js"></script>
+
+    <script src="~/Scripts/angular-google-maps.js"></script>
+    <script src="~/ngApp/controllers/accountController.js"></script>
+    <script src="~/ngApp/services/accountService.js"></script>
+</body>
+</html>
