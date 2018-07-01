@@ -1,0 +1,6 @@
+{
+    "angular": "1.6.6",
+    "@types/angular": "^1.6.39",
+    "angular-resource": "^1.6.6",
+    "ngimport": "^0.8.0",
+}
