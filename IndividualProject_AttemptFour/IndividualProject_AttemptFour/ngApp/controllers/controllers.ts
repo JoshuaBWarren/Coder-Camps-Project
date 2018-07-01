@@ -1,4 +1,5 @@
-﻿namespace MyApp.Controllers {
+﻿
+namespace MyApp.Controllers {
 
     export class HomeController {
 
