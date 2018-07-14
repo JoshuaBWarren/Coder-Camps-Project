@@ -1,0 +1,21 @@
+{
+  "name": "coder-camps-project",
+  "version": "1.0.0",
+  "description": "Using Fullstack, I wanted to create a web app that would allow the user to search for reviews of a given restaurant\r as well as objects for purchase, from multiple sites such as Yelp, Facebook, and Google.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WarrenJB86/Coder-Camps-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WarrenJB86/Coder-Camps-Project/issues"
+  },
+  "homepage": "https://github.com/WarrenJB86/Coder-Camps-Project#readme"
+}

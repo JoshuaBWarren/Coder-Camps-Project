@@ -10,6 +10,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
     <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
     <UseIISExpress>true</UseIISExpress>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
